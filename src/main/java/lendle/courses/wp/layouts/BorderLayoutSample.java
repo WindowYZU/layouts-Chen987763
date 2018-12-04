@@ -6,6 +6,7 @@
 package lendle.courses.wp.layouts;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -31,7 +32,14 @@ public class BorderLayoutSample {
         
         //1. create five buttons, add them to North, West, South, East, Center
         //2. test the effect of setHgap and setVgap (layout.setHgap() and layout.setVgap())
-        JButton button1=new JButton("1");
+        //3. test the effect of hgap and vgap
+        layout.setHgap(50);
+        layout.setVgap(50);
+        layout.setAlignment(FlowLayout.LEFT);
+        for(int i=0; i<5; i++){
+            JButton button=new JButton("button_"+i);
+            frame.add(button);
+        }
         //////////////////////////////////////////////////////////////////////
         
         frame.setVisible(true);
